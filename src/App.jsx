@@ -12,7 +12,7 @@ const steps = [
   { title: 'Download FoliGo', body: 'Install the app from the App Store and open it.' },
   { title: 'Tap "Connect Schwab"', body: 'You choose when to link your account. Nothing connects until you start it.' },
   { title: 'Sign in on Schwab', body: "You log in on Schwab's own secure page and approve access. FoliGo never sees your Schwab password." },
-  { title: 'View your data', body: 'Market data from your own Schwab connection appears in your dashboards, gauges, and backtests.' },
+  { title: 'Build your gauge', body: 'Pick a stock and a metric, set your ranges, and backtest it. Market data from your own Schwab connection fills it in.' },
 ]
 
 const does = [
@@ -92,14 +92,17 @@ export default function App() {
         <section className="bg-pine px-4 py-16 text-parchment sm:py-24">
           <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2">
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-champagne">Self-directed stock analysis</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-champagne">Your metric, your rules</p>
               <h1 className="mb-5 font-serif text-4xl leading-tight sm:text-5xl">
-                Your market data, <span className="text-champagne">at a glance.</span>
+                Plan when you're calm. <span className="text-champagne">Act when you're ready.</span>
               </h1>
-              <p className="mb-8 text-lg text-parchment/80">
+              <p className="mb-4 text-lg text-parchment/80">
+                The market will always be noisy. Your gauge will not be.
+              </p>
+              <p className="mb-8 text-parchment/70">
                 FoliGo is a personal stock market data and analysis tool for self-directed Schwab clients.
-                You connect your own Schwab account to view market data, build custom metrics, and see them
-                as simple gauges and charts.
+                Connect your own Schwab account, build the metric you trust, like P/S or % from the
+                200-week SMA, set your ranges, and see exactly where a stock sits on a single gauge.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href="#how" className="rounded-lg bg-champagne px-5 py-3 font-semibold text-ink hover:brightness-105">How it works</a>
@@ -113,10 +116,10 @@ export default function App() {
         {/* Self-Directed Statement */}
         <section className="border-b border-pine/10 bg-champagne/15 px-4 py-10">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-3 font-serif text-2xl text-pine">You stay in control</h2>
+            <h2 className="mb-3 font-serif text-2xl text-pine">You do the thinking. FoliGo shows the signal.</h2>
             <p className="text-pine/90">
-              FoliGo provides data and tools only. You make all investment decisions and place all trades
-              yourself through your normal Schwab channels. FoliGo does not place orders, generate trade
+              FoliGo provides data and tools only. You make every investment decision and place every trade
+              yourself, through your normal Schwab channels. FoliGo does not place orders, generate trade
               recommendations, or manage money.
             </p>
           </div>
@@ -178,10 +181,14 @@ export default function App() {
 
         {/* Who It's For */}
         <Section id="who" eyebrow="Audience" title="Who it's for" className="bg-white">
+          <p className="mb-4 max-w-3xl text-lg text-ink/80">
+            Self-directed Schwab clients who already know what P/E, EPS, and P/S mean. Intermediate and value
+            investors. Busy people, a developer, a parent, a professional, who want to invest well without
+            letting the market eat their day.
+          </p>
           <p className="max-w-3xl text-lg text-ink/80">
-            Self-directed Schwab brokerage clients who want better visibility into their own data. FoliGo is
-            built for individual investors who research and make their own decisions, and want a clearer,
-            faster way to track the numbers they care about.
+            You already have a trading app. What you don't have is a way to separate your planning from your
+            panic. Do the thinking before the stress shows up, then check the gauge.
           </p>
         </Section>
 
@@ -210,10 +217,17 @@ export default function App() {
             <div>
               <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-champagne">About</p>
               <h2 className="mb-4 font-serif text-3xl">{BUSINESS_NAME}</h2>
+              <p className="mb-4 text-parchment/80">
+                FoliGo didn't start as an app idea. It started with a problem: a stock hits the price you
+                planned for, and instead of acting, you freeze.
+              </p>
+              <p className="mb-4 text-parchment/80">
+                So FoliGo's founder, an independent developer and investor, built @TeslaTrakr, a bot that
+                tracked Tesla's P/S ratio in real time against its full history, with color-coded ranges.
+                Then came the obvious question: why does this only work for one stock?
+              </p>
               <p className="text-parchment/80">
-                FoliGo is built by an independent developer and investor who wanted a cleaner way to track
-                valuation and trend metrics. The app is designed to help self-directed investors see their
-                data clearly, while every decision stays with them.
+                FoliGo is the answer. Any stock, any metric you define, with the history to back it up.
               </p>
             </div>
             <div className="rounded-2xl bg-ink/40 p-6 ring-1 ring-champagne/20">
@@ -228,6 +242,7 @@ export default function App() {
       <footer className="bg-ink px-4 py-8 text-xs text-parchment/60">
         <div className="mx-auto max-w-5xl space-y-3">
           <Logo dark />
+          <p className="font-serif text-base text-champagne">Do the thinking. Then go live your life.</p>
           <p>
             FoliGo is a data visualization and analysis tool and does not provide investment, tax, or legal advice.
             All investment decisions are made solely by the user. Past performance and backtests do not guarantee future results.
